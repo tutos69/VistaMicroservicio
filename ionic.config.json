@@ -1,0 +1,7 @@
+{
+  "name": "VistaMicroservicio",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}
