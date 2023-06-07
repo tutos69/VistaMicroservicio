@@ -1,0 +1,31 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Inscripcion</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button defaultHref="tab4"  (click)="regresar()"></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <!-- <ion-list *ngFor="let cli of listaInscripcion"> -->
+
+  <ion-card>
+    <ion-card-header>
+      <ion-card-title>aaaaaaa</ion-card-title>
+      <ion-card-subtitle>bbbbbbbbbbbbbbbb</ion-card-subtitle>
+      <ion-card-subtitle>cccccccccccccccc</ion-card-subtitle>
+    </ion-card-header>
+    <ion-button (click)="updateInscripcion()"><ion-icon
+        name="eye-sharp"></ion-icon></ion-button>
+    <!-- <ion-button color="danger" (click)="eliminarInscripcioncli)"><ion-icon
+        name="trash"></ion-icon></ion-button> -->
+
+        <!-- <ion-button><ion-icon
+          name="eye-sharp"></ion-icon></ion-button> -->
+      <ion-button color="danger" ><ion-icon
+          name="trash"></ion-icon></ion-button>
+
+  </ion-card>
+  <!-- </ion-list> -->
+</ion-content>

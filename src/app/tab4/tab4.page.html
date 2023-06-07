@@ -1,0 +1,17 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title>Mas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item button (click)="VistaCliente()">
+    <ion-label><ion-icon name="person-outline"></ion-icon>Cliente</ion-label>
+  </ion-item>
+  <ion-item button (click)="vistaCurso()">
+    <ion-label><ion-icon name="bar-chart-outline"></ion-icon>Curso</ion-label>
+  </ion-item>
+  <ion-item button (click)="vistaInscripcion()">
+    <ion-label> <ion-icon aria-hidden="true" name="triangle"></ion-icon>Inscripción</ion-label>
+  </ion-item>
+</ion-content>
