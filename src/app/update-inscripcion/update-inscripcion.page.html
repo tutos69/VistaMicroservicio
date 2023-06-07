@@ -2,45 +2,45 @@
   <ion-toolbar>
     <ion-title>Inscripcion</ion-title>
     <ion-buttons slot="start">
-      <ion-back-button defaultHref="tab4"  (click)="regresar()"></ion-back-button>
+      <ion-back-button defaultHref="tab4" (click)="regresar()"></ion-back-button>
     </ion-buttons>
   </ion-toolbar>
 </ion-header>
 
 <ion-content [fullscreen]="true">
   <div class="contaier-login">
-    <ion-grid>
-      <ion-row>
-        <ion-col>
-          <ion-list>
-            <br />
-            <ion-item>
-              <ion-icon name="finger-print-outline"></ion-icon>
-              <ion-input type="text" required placeholder="Cedula Del Cliente" class="Text"></ion-input>
-            </ion-item>
-            <br />
-            <ion-item>
-              <ion-icon name="mail"></ion-icon>
-              <ion-input type="text" required placeholder="Correo electrónico *" class="Text"></ion-input>
-            </ion-item>
+    <form [formGroup]="newInscRegisterForm" (ngSubmit)="updateInscripcion()">
+      <ion-grid>
+        <ion-row>
+          <ion-col>
+            <ion-list>
+              <br />
+              <ion-item>
+                <ion-select formControlName="codigoCurso" aria-label="Food"
+                  placeholder="Seleccione la Materia" >
+                  <ion-select-option *ngFor="let food of listaCurso" [value]="food.codigoCurso">{{
+                    food.nombreCurso}}</ion-select-option>
+                </ion-select>
+              </ion-item>
+              <br />
+              <ion-item>
+                <ion-icon name="lock-open"></ion-icon>
+                <ion-input formControlName="nombreCurso" placeholder="Nombre Curso"  [(ngModel)]="inscripcionVU.nombreCurso" ></ion-input>
 
-            <br />
-            <ion-item>
-              <ion-icon name="lock-open"></ion-icon>
-              <ion-input id="nombre" type="text" required placeholder="Nombre *" class="Text"></ion-input>
-            </ion-item>
-            <br />
+              </ion-item>
+              <br />
 
 
-          </ion-list>
-        </ion-col>
-      </ion-row>
-      <ion-row>
-        <ion-col>
-          <ion-button type="submit" expand="block">Registrarse</ion-button>
-        </ion-col>
-      </ion-row>
+            </ion-list>
+          </ion-col>
+        </ion-row>
+        <ion-row>
+          <ion-col>
+            <ion-button type="submit" expand="block">Registrarse</ion-button>
+          </ion-col>
+        </ion-row>
 
-    </ion-grid>
+      </ion-grid>
+    </form>
   </div>
 </ion-content>

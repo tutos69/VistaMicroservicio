@@ -17,11 +17,14 @@ export class Tab3Page {
     'email': ['', [Validators.required]],
   })
 
-  constructor( private fb: FormBuilder,
+  constructor(private fb: FormBuilder,
     private toast: ToastController,
-    private clienteService: ClienteService,) {}
+    private clienteService: ClienteService,) { }
 
+  limpiarInput() {
+    this.newClienteRegisterForm.reset();
 
+  }
 
   registroNewCliente() {
     if (!this.newClienteRegisterForm.valid) {
@@ -35,7 +38,7 @@ export class Tab3Page {
           // this.ruta.navigate(['login'])
           // this.listarCliente()
           this.mostrarMensaje("Usuario Creado");
-
+          this.limpiarInput
 
         }, (error) => {
           // console.log('No vale ');
@@ -44,12 +47,12 @@ export class Tab3Page {
     }
   }
 
-    async mostrarMensaje(mensaje: any) {
-      const toast = await this.toast.create({
-        position: 'top',
-        message: mensaje,
-        duration: 3000
-      });
-      toast.present();
-    }
+  async mostrarMensaje(mensaje: any) {
+    const toast = await this.toast.create({
+      position: 'top',
+      message: mensaje,
+      duration: 3000
+    });
+    toast.present();
+  }
 }

@@ -8,24 +8,22 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- <ion-list *ngFor="let cli of listaInscripcion"> -->
+  <ion-list *ngFor="let insc of listaInscripcion">
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>aaaaaaa</ion-card-title>
-      <ion-card-subtitle>bbbbbbbbbbbbbbbb</ion-card-subtitle>
-      <ion-card-subtitle>cccccccccccccccc</ion-card-subtitle>
+      <ion-card-title>{{insc.nombreCurso}}</ion-card-title>
+      <ion-card-subtitle>{{insc.cedula}}</ion-card-subtitle>
+      <ion-card-subtitle>{{insc.codigoCurso}}</ion-card-subtitle>
+      <ion-card-subtitle>{{insc.codigo}}</ion-card-subtitle>
     </ion-card-header>
-    <ion-button (click)="updateInscripcion()"><ion-icon
+    <ion-button (click)="updateInscripcion(insc)"><ion-icon
         name="eye-sharp"></ion-icon></ion-button>
-    <!-- <ion-button color="danger" (click)="eliminarInscripcioncli)"><ion-icon
-        name="trash"></ion-icon></ion-button> -->
+    <ion-button color="danger" (click)="eliminarInscripcion(insc.codigo)"><ion-icon
+        name="trash"></ion-icon></ion-button>
 
-        <!-- <ion-button><ion-icon
-          name="eye-sharp"></ion-icon></ion-button> -->
-      <ion-button color="danger" ><ion-icon
-          name="trash"></ion-icon></ion-button>
+
 
   </ion-card>
-  <!-- </ion-list> -->
+  </ion-list>
 </ion-content>

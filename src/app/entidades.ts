@@ -12,9 +12,8 @@ export class Curso {
 }
 
 export class Inscripcion {
-  id!: number;
+  codigo!: number;
   cedula: string = "";
-  codigo: string = "";
-  codigo_curso: string = "";
-  nombre_curso: string = "";
+  codigoCurso: string = "";
+  nombreCurso: string = "";
 }

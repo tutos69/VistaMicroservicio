@@ -32,8 +32,8 @@ export class ClienteService {
     return this.httpClient.delete(finalUrl);
   }
 
-  findbyCedula(cedula:Number): Observable<any> {
-    let finalUrl = this.endpoint+'findByCedula/'+cedula;
+  findbyCedula(cedula:String): Observable<any> {
+    let finalUrl = this.endpoint+'clientes/'+cedula;
     return this.httpClient.get(finalUrl);
   }
 

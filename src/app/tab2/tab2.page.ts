@@ -22,6 +22,13 @@ export class Tab2Page implements OnInit  {
 
   }
 
+
+  limpiarInput() {
+    this.newCursoRegisterForm.reset();
+
+  }
+
+
   constructor( private fb: FormBuilder,
     private toast: ToastController,
     private cursoService: CursoService,) {}
@@ -40,6 +47,7 @@ export class Tab2Page implements OnInit  {
           // this.ruta.navigate(['login'])
           // this.listarCliente()
           this.mostrarMensaje("Curso Creado");
+          this.limpiarInput()
 
 
         }, (error) => {
