@@ -1,14 +1,14 @@
 export class Cliente {
   cedula: string = "";
-  nombre: string = "";
-  correoElectronico: string = "";
+  nombres: string = "";
+  email: string = "";
 }
 
 
 export class Curso {
-  codigo: string = "";
-  nombre_curso: string = "";
-  descripción: string = "";
+  codigoCurso: string="";
+  nombreCurso: string = "";
+  descripcionCurso: string = "";
 }
 
 export class Inscripcion {

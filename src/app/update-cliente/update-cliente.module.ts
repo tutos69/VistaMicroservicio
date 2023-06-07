@@ -12,7 +12,8 @@ import { UpdateClientePage } from './update-cliente.page';
   imports: [
     CommonModule,
     FormsModule,
-    IonicModule, ReactiveFormsModule,
+    IonicModule,
+    ReactiveFormsModule,
 
     UpdateClientePageRoutingModule
   ],exports:[

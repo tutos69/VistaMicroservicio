@@ -8,25 +8,24 @@
 </ion-header>
 <ion-content [fullscreen]="true">
   <div class="contaier-login">
+    <form [formGroup]="newCursoRegisterForm" (ngSubmit)="updateCliente()">
     <ion-grid>
       <ion-row>
         <ion-col>
+
           <ion-list>
-            <br />
-            <ion-item>
-              <ion-icon name="lock-open"></ion-icon>
-              <ion-input type="text" required placeholder="Codigo del Curso" class="Text"></ion-input>
-            </ion-item>
+
             <br />
             <ion-item>
               <ion-icon name="document-text-outline"></ion-icon>
-              <ion-input id="nombre" type="text" required placeholder="Nombre *" class="Text"></ion-input>
+              <ion-input formControlName="nombreCurso" placeholder="nombreCurso"  [(ngModel)]="cursoVU.nombreCurso" ></ion-input>
             </ion-item>
+
 
             <br />
             <ion-item>
               <ion-icon name="reader-outline"></ion-icon>
-              <ion-input type="text" required placeholder="Descripcion" class="Text"></ion-input>
+              <ion-input formControlName="descripcionCurso" placeholder="descripcionCurso"  [(ngModel)]="cursoVU.descripcionCurso" ></ion-input>
             </ion-item>
 
             <br />
@@ -41,5 +40,6 @@
       </ion-row>
 
     </ion-grid>
+  </form>
   </div>
 </ion-content>

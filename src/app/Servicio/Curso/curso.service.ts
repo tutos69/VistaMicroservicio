@@ -2,13 +2,17 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Curso } from 'src/app/entidades';
+
 import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class CursoService {
-  endpoint=environment.backEndServer + 'api/cliente/';
+
+  endpoint = environment.backEndServer + 'api/';
+
+
 
   httpOptions={
     headers: new HttpHeaders({
@@ -19,28 +23,29 @@ export class CursoService {
 
 
   ListarCursor(): Observable<any> {
-    let finalUrl = this.endpoint+'findAll';
+    let finalUrl = this.endpoint + 'cursos';
     return this.httpClient.get(finalUrl);
   }
 
-  newCurso(curso:Curso): Observable<any> {
-    let finalUrl = this.endpoint+'create';
-    return this.httpClient.post<Curso>(finalUrl,JSON.stringify(curso),this.httpOptions);
+  newCurso(curso: Curso): Observable<any> {
+    let finalUrl = this.endpoint + 'cursos';
+    return this.httpClient.post<Curso>(finalUrl, JSON.stringify(curso), this.httpOptions);
   }
 
-  deleteCurso(id:Number): Observable<any> {
-    let finalUrl = this.endpoint+'delete/'+id;
+  deleteCurso(id: String): Observable<any> {
+    let finalUrl = this.endpoint + 'cursos/' + id;
+    return this.httpClient.delete(finalUrl);
+  }
+
+  findbyID(id: String): Observable<any> {
+    let finalUrl = this.endpoint + 'cursos/' + id;
     return this.httpClient.get(finalUrl);
   }
 
-  findbyID(id:Number): Observable<any> {
-    let finalUrl = this.endpoint+'findByCedula/'+id;
-    return this.httpClient.get(finalUrl);
+  updateCurso(curso: Curso): Observable<any> {
+    let finalUrl = this.endpoint + 'cursos/'+curso.codigoCurso;
+    return this.httpClient.put<Curso>(finalUrl, JSON.stringify(curso), this.httpOptions);
   }
 
-  updateCurso(curso:Curso): Observable<any> {
-    let finalUrl = this.endpoint+'update';
-    return this.httpClient.post<Curso>(finalUrl,JSON.stringify(curso),this.httpOptions);
-  }
 
 }

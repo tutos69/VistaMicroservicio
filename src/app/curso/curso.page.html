@@ -8,24 +8,24 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
-  <!-- <ion-list *ngFor="let cli of listaCurso"> -->
+   <ion-list *ngFor="let curso of listaCurso">
 
   <ion-card>
     <ion-card-header>
-      <ion-card-title>aaaaaaa</ion-card-title>
-      <ion-card-subtitle>bbbbbbbbbbbbbbbb</ion-card-subtitle>
-      <ion-card-subtitle>cccccccccccccccc</ion-card-subtitle>
+      <ion-card-title>{{curso.codigoCurso}}</ion-card-title>
+      <ion-card-subtitle>{{curso.nombreCurso}}</ion-card-subtitle>
+      <ion-card-subtitle>{{curso.descripcionCurso}}</ion-card-subtitle>
     </ion-card-header>
-    <ion-button (click)="updateCurso()"><ion-icon
+    <ion-button (click)="updateCurso(curso)"><ion-icon
         name="eye-sharp"></ion-icon></ion-button>
-    <!-- <ion-button color="danger" (click)="eliminarCurso(cli)"><ion-icon
-        name="trash"></ion-icon></ion-button> -->
+    <ion-button color="danger" (click)="eliminarCurso(curso.codigoCurso)"><ion-icon
+        name="trash"></ion-icon></ion-button>
 
         <!-- <ion-button><ion-icon
           name="eye-sharp"></ion-icon></ion-button> -->
-      <ion-button color="danger" ><ion-icon
-          name="trash"></ion-icon></ion-button>
+      <!-- <ion-button color="danger" ><ion-icon
+          name="trash"></ion-icon></ion-button> -->
 
   </ion-card>
-  <!-- </ion-list> -->
+  </ion-list>
 </ion-content>

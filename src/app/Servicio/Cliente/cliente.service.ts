@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ClienteService {
-  endpoint=environment.backEndServer + 'api/cliente/';
+  endpoint=environment.backEndServer + 'api/';
 
   httpOptions={
     headers: new HttpHeaders({
@@ -18,18 +18,18 @@ export class ClienteService {
   constructor(private httpClient:HttpClient) { }
 
   ListarClientes(): Observable<any> {
-    let finalUrl = this.endpoint+'findAll';
+    let finalUrl = this.endpoint+'clientes';
     return this.httpClient.get(finalUrl);
   }
 
   newCliente(cliente:Cliente): Observable<any> {
-    let finalUrl = this.endpoint+'create';
+    let finalUrl = this.endpoint+'clientes';
     return this.httpClient.post<Cliente>(finalUrl,JSON.stringify(cliente),this.httpOptions);
   }
 
-  deleteCliente(id:Number): Observable<any> {
-    let finalUrl = this.endpoint+'delete/'+id;
-    return this.httpClient.get(finalUrl);
+  deleteCliente(id:String): Observable<any> {
+    let finalUrl = this.endpoint+'clientes/'+id;
+    return this.httpClient.delete(finalUrl);
   }
 
   findbyCedula(cedula:Number): Observable<any> {
@@ -38,7 +38,7 @@ export class ClienteService {
   }
 
   updateCliente(cliente:Cliente): Observable<any> {
-    let finalUrl = this.endpoint+'update';
-    return this.httpClient.post<Cliente>(finalUrl,JSON.stringify(cliente),this.httpOptions);
+    let finalUrl = this.endpoint+'clientes/'+cliente.cedula;
+    return this.httpClient.put<Cliente>(finalUrl,JSON.stringify(cliente),this.httpOptions);
   }
 }

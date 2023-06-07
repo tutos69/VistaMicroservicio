@@ -9,6 +9,7 @@
 
 <ion-content [fullscreen]="true">
   <div class="contaier-login">
+    <form [formGroup]="newClienteRegisterForm" (ngSubmit)="updateCliente()">
     <ion-grid>
       <ion-row>
         <ion-col>
@@ -16,18 +17,15 @@
             <br />
             <ion-item>
               <ion-icon name="mail"></ion-icon>
-              <ion-input type="text" required placeholder="Correo electrónico *" class="Text"></ion-input>
+              <ion-input formControlName="email" placeholder="email"  [(ngModel)]="clienteVU.email" ></ion-input>
+
             </ion-item>
 
             <br />
             <ion-item>
               <ion-icon name="person-outline"></ion-icon>
-              <ion-input id="nombre" type="text" required placeholder="Nombre *" class="Text"></ion-input>
-            </ion-item>
-            <br />
-            <ion-item>
-              <ion-icon name="finger-print-outline"></ion-icon>
-              <ion-input type="text" required placeholder="Cedula *" class="Text"></ion-input>
+              <ion-input formControlName="nombres" placeholder="nombres"  [(ngModel)]="clienteVU.nombres" ></ion-input>
+
             </ion-item>
             <br />
           </ion-list>
@@ -40,5 +38,6 @@
       </ion-row>
 
     </ion-grid>
+  </form>
   </div>
 </ion-content>

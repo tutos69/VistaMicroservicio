@@ -1,21 +1,3 @@
-<!-- <ion-header [translucent]="true">
-  <ion-toolbar>
-    <ion-title>
-      Cliente
-    </ion-title>
-  </ion-toolbar>
-</ion-header>
-
-<ion-content [fullscreen]="true">
-  <ion-header collapse="condense">
-    <ion-toolbar>
-      <ion-title size="large">Tab 1</ion-title>
-    </ion-toolbar>
-  </ion-header>
-
-  <app-explore-container name="Tab 1 page"></app-explore-container>
-</ion-content> -->
-
 <ion-header [translucent]="true">
   <ion-toolbar>
     <ion-title>
@@ -25,26 +7,29 @@
 </ion-header>
 
 <ion-content [fullscreen]="true">
+
   <div class="contaier-login">
+    <form [formGroup]="newCursoRegisterForm" (ngSubmit)="registroNewCurso()">
     <ion-grid>
       <ion-row>
         <ion-col>
+
           <ion-list>
             <br />
             <ion-item>
               <ion-icon name="lock-open"></ion-icon>
-              <ion-input type="text" required placeholder="Codigo del Curso" class="Text"></ion-input>
+              <ion-input formControlName="codigoCurso" type="text" required placeholder="Codigo del Curso" class="Text"></ion-input>
             </ion-item>
             <br />
             <ion-item>
               <ion-icon name="document-text-outline"></ion-icon>
-              <ion-input id="nombre" type="text" required placeholder="Nombre *" class="Text"></ion-input>
+              <ion-input formControlName="nombreCurso" type="text" required placeholder="Nombre *" class="Text"></ion-input>
             </ion-item>
 
             <br />
             <ion-item>
               <ion-icon name="reader-outline"></ion-icon>
-              <ion-input type="text" required placeholder="Descripcion" class="Text"></ion-input>
+              <ion-input formControlName="descripcionCurso" type="text" required placeholder="Descripcion" class="Text"></ion-input>
             </ion-item>
 
             <br />
@@ -59,7 +44,8 @@
           <ion-button type="submit" expand="block">Registrarse</ion-button>
         </ion-col>
       </ion-row>
-
     </ion-grid>
+    </form>
   </div>
+
 </ion-content>
