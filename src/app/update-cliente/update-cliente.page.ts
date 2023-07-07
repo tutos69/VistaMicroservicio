@@ -22,8 +22,8 @@ export class UpdateClientePage implements OnInit {
 
   newClienteRegisterForm: FormGroup = this.fb.group({
 
-    'nombres': ['', [Validators.required]],
-    'email': ['', [Validators.required]],
+    'nombre': ['', [Validators.required]],
+    'apellido': ['', [Validators.required]],
   })
 
 
@@ -42,7 +42,7 @@ export class UpdateClientePage implements OnInit {
       // return false;
       this.mostrarMensaje("Ingrese datos");
     } else {
-      this.newClienteRegisterForm.value.cedula = this.clienteVU.cedula;
+      this.newClienteRegisterForm.value.identificador = this.clienteVU.identificador;
       this.clienteService.updateCliente(this.newClienteRegisterForm.value).subscribe(
         (data) => {
           // console.log('Hola', data);

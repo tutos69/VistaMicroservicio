@@ -1,9 +1,14 @@
-export class Cliente {
-  cedula: string = "";
-  nombres: string = "";
-  email: string = "";
-}
+// export class Cliente {
+//   cedula: string = "";
+//   nombres: string = "";
+//   email: string = "";
+// }
 
+export class Cliente {
+  identificador: string = "";
+  nombre: string = "";
+  apellido: string = "";
+}
 
 export class Curso {
   codigoCurso: string="";

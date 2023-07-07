@@ -8,7 +8,7 @@ import { environment } from 'src/environments/environment';
   providedIn: 'root'
 })
 export class ClienteService {
-  endpoint=environment.backEndServer + 'api/';
+  endpoint=environment.backEndServer;
 
   httpOptions={
     headers: new HttpHeaders({
@@ -18,12 +18,12 @@ export class ClienteService {
   constructor(private httpClient:HttpClient) { }
 
   ListarClientes(): Observable<any> {
-    let finalUrl = this.endpoint+'clientes';
+    let finalUrl = this.endpoint+'cliente';
     return this.httpClient.get(finalUrl);
   }
 
   newCliente(cliente:Cliente): Observable<any> {
-    let finalUrl = this.endpoint+'clientes';
+    let finalUrl = this.endpoint+'create';
     return this.httpClient.post<Cliente>(finalUrl,JSON.stringify(cliente),this.httpOptions);
   }
 
@@ -32,13 +32,13 @@ export class ClienteService {
     return this.httpClient.delete(finalUrl);
   }
 
-  findbyCedula(cedula:String): Observable<any> {
-    let finalUrl = this.endpoint+'clientes/'+cedula;
+  findbyCedula(identificador:String): Observable<any> {
+    let finalUrl = this.endpoint+'clientes/'+identificador;
     return this.httpClient.get(finalUrl);
   }
 
   updateCliente(cliente:Cliente): Observable<any> {
-    let finalUrl = this.endpoint+'clientes/'+cliente.cedula;
+    let finalUrl = this.endpoint+'clientes/'+cliente.identificador;
     return this.httpClient.put<Cliente>(finalUrl,JSON.stringify(cliente),this.httpOptions);
   }
 }

@@ -12,9 +12,9 @@ import { ClienteService } from '../Servicio/Cliente/cliente.service';
 export class Tab3Page {
 
   newClienteRegisterForm: FormGroup = this.fb.group({
-    'cedula': ['', [Validators.required]],
-    'nombres': ['', [Validators.required]],
-    'email': ['', [Validators.required]],
+    'identificador': ['', [Validators.required]],
+    'nombre': ['', [Validators.required]],
+    'apellido': ['', [Validators.required]],
   })
 
   constructor(private fb: FormBuilder,
